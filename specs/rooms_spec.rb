@@ -58,9 +58,12 @@ class GuestTest < MiniTest::Test
     assert_equal("Room too full", @room1.check_capacity)
   end
 
-  def test_is_guests_fav_song_in_playlist
-    @room1.add_to_playlist(@song2)
-    assert_equal("Whoo!", @room1.check_playlist(@guest1.favourite_song))
-  end
+  def test_check_favourite_song
+    @room1.add_to_playlist(@song2.title)
+     song = @guest1.favourite_song
+     assert_equal("Whoo!", @room1.playlist_include_guest_fav_song(song))
+   end
+
+
 
 end

@@ -31,16 +31,15 @@ class Room
     end
   end
 
-  def check_playlist(fav_song)
-song_title = []
-    for song in @playlist
-      song_title << [:title]
-      if song_title == fav_song
-      return "Whoo!"
-    else
-      return "I'm singing #{fav_song}"
+
+  def playlist_include_guest_fav_song(song)
+    for songs in @playlist
+      if songs == song
+        return "Whoo!"
+      else
+        return "I'm singing #{song}"
+      end
     end
-  end
   end
 
 end
