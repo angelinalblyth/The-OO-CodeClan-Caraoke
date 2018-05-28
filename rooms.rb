@@ -42,4 +42,7 @@ class Room
     end
   end
 
+  def add_entry_fee_to_till
+    
+
 end

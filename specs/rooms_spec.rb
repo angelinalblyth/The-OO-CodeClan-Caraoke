@@ -4,6 +4,7 @@ require("minitest/rg")
 require_relative("../rooms")
 require_relative("../guests")
 require_relative("../songs")
+require_relative("../bar")
 
 class GuestTest < MiniTest::Test
 
@@ -64,6 +65,10 @@ class GuestTest < MiniTest::Test
      assert_equal("Whoo!", @room1.playlist_include_guest_fav_song(song))
    end
 
+   def test_add_entry_fee_to_till
+     @room1.add_entry_fee_to_till
+     assert_equal(10, @drink1.till)
+   end
 
 
 end

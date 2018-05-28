@@ -8,21 +8,21 @@ require_relative("../rooms")
 class BarTest < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("Angelina", "Wish", 50)
-    @guest2 = Guest.new("Grant", "Fat Lip", 40)
-    @guest3 = Guest.new("Abi", "Whats my age again?", 60)
-    @guest4 = Guest.new("Hammy", "This could be anywhere in the world", 30)
-    @guest5 = Guest.new("Louise", "The Middle", 100)
-    @room1 = Room.new("Rock Room", 2)
-    @bar = Bar.new("The Karaoke Cave")
+    @drink1 = Bar.new("Rum and Coke", 5)
+    @drink2 = Bar.new("Beer", 4)
+    @drink3 = Bar.new("Wine", 6)
   end
 
-  def test_bar_has_name
-    assert_equal("The Karaoke Cave", @bar.name)
+  def test_drink_has_name
+    assert_equal("Rum and Coke", @drink1.drink_name)
   end
 
   def test_see_till_amount
-    assert_equal(0, @bar.till)
+    assert_equal(0, @drink1.till)
+  end
+
+  def test_drink_has_cost
+    assert_equal(5, @drink1.price)
   end
 
 end
